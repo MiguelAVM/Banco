@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/act_cli.js"></script>
+    <script src="/js/eli_cli.js"></script>
+    <link rel="stylesheet" href="./usuarios.css">
+    <title>Clientes</title>
+</head>
+<body>
+    <a href="/consultas">Usuarios</a>
+    <a href="/lineas">Lineas</a>
+    <a href="/creditos">Creditos</a>
+    <header><h1>Clientes</h1></header>
+    <form action="/frminsertar_cli" method="POST" class="insertar">
+    <aside>Documento</aside><input type="text" name="doccli" value="">
+    <aside>Nombre</aside><input type="text" name="nomcli" value="">
+    <aside>Apellido</aside><input type="text" name="aprecli" value="">
+    <aside>Correo</aside><input type="text" name="correocli" value="">
+    <aside>Celular</aside><input type="text" name="celular" value="">
+    <aside>Sexo</aside><input type="text"name="sexo" value="">
+    <aside>Fech_Naci</aside><input type="date"name="fechanaccli" value="">
+    <br>
+    <input type="submit" value="insertar" >
+    </form>
+    <form class="resultado">
+        <table>
+            <thead>
+                <tr>
+                    <th>Documento</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Celular</th>
+                    <th>Sexo</th>
+                    <th>Fech_Naci</th>
+                    <th>Actualizar</th>
+                    <th>Eliminar</th>    
+                </tr>
+            </thead>
+            <tbody >
+                <% datos.forEach(function (datos){ %>
+                <tr class="resu">
+                    <td><input type="text" value="<%=datos.doccli%>" name="doccli" id="doccli" class="doccli"></td>
+                    <td><input type="text" value="<%=datos.nomcli%>" name="nomcli" id="nom" class="nom"></td>
+                    <td><input type="text" value="<%=datos.aprecli%>" name="apre" id="apre" class="apre"></td>
+                    <td><input type="text" value="<%=datos.correocli%>" name="correo" id="correo" class="correo"></td>
+                    <td><input type="text" value="<%=datos.celular%>" name="celular" id="celular" class="celular"></td>
+                    <td><input type="text" value="<%=datos.sexo%>" name="sexo" id="sexo" class="sexo"></td>
+                    <td><input type="text" value="<%=datos.fechanaccli%>" name="fecha" id="fecha" class="fecha"></td>
+                    <td><input type="submit" value="actualizar" name="btnact" id="btnact" class="btnact"></td>
+                    <td><input type="submit" value="eliminar" name="btneli" id="btneli" class="btneli"></td>
+                </tr>
+                <%})%>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>

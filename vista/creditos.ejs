@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/act_cre.js"></script>
+    <script src="/js/eli_cre.js"></script>
+    <link rel="stylesheet" href="./usuarios.css">
+    <title>Creditos</title>
+</head>
+<body>
+    <a href="/consultas">Usuarios</a>
+    <a href="/cliente">Clientes</a>
+    <a href="/lineas">Lineas</a>
+    <header><h1>Creditos</h1></header>
+    <form action="/frminsertar_cre" method="POST" class="insertar">
+    <aside>Codigo Credito</aside><input type="text" name="codigocredito" value="">    
+    <aside>Documento</aside><input type="text" name="doccli" value="">
+    <aside>Codigo linea</aside><input type="text" name="codlinea" value="">
+    <aside>Monto Prestado</aside><input type="text" name="montoprestado" value="">
+    <aside>Fecha aprobado</aside><input type="date" name="fechaaproba" value="">
+    <aside>Plazo</aside><input type="text" name="plazo" value="">
+    <br>
+    <input type="submit" value="insertar" >
+    </form>
+    <form class="resultado">
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo Credito</th>
+                    <th>Documento</th>
+                    <th>Codigo linea</th>
+                    <th>Monto Prestado</th>  
+                    <th>Fecha aprobado</th>   
+                    <th>Plazo</th>  
+                </tr>
+            </thead>
+            <tbody >
+                <% datos.forEach(function (datos){ %>
+                <tr class="resu">
+                    <td><input type="text" value="<%=datos.codigocredito%>" name="codigocredito" id="codigocredito" class="codigocredito"></td>
+                    <td><input type="text" value="<%=datos.doccli%>" name="doccli" id="doccli" class="doccli"></td>
+                    <td><input type="text" value="<%=datos.codlinea%>" name="codlinea" id="codlinea" class="codlinea"></td>
+                    <td><input type="text" value="<%=datos.montoprestado%>" name="montoprestado" id="montoprestado" class="montoprestado"></td>
+                    <td><input type="text" value="<%=datos.fechaaproba%>" name="fechaaproba" id="fechaaproba" class="fechaaproba"></td>
+                    <td><input type="text" value="<%=datos.plazo%>" name="plazo" id="plazo" class="plazo"></td>
+                    <td><input type="submit" value="actualizar" name="btnact" id="btnact" class="btnact"></td>
+                    <td><input type="submit" value="eliminar" name="btneli" id="btneli" class="btneli"></td>
+                </tr>
+                <%})%>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>

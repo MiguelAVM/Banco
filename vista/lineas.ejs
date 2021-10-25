@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/act_li.js"></script>
+    <script src="/js/eli_li.js"></script>
+    <link rel="stylesheet" href="./usuarios.css">
+    <title>Lineas</title>
+</head>
+<body>
+    <a href="/consultas">Usuarios</a>
+    <a href="/cliente">Clientes</a>
+    <a href="/creditos">Creditos</a>
+    <header><h1>Lineas</h1></header>
+    <form action="/frminsertar_li" method="POST" class="insertar">
+    <aside>Codigo</aside><input type="text" name="codlinea" value="">
+    <aside>Nombre de linea</aside><input type="text" name="nomlinea" value="">
+    <aside>monto maximo</aside><input type="text" name="montomaxicredito" value="">
+    <aside>plazo</aside><input type="text" name="plazomaxcred" value="">
+    <br>
+    <input type="submit" value="insertar" >
+    </form>
+    <form class="resultado">
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nombre de linea</th>
+                    <th>Monto Maximo</th>
+                    <th>Plazo</th>   
+                </tr>
+            </thead>
+            <tbody >
+                <% datos.forEach(function (datos){ %>
+                <tr class="resu">
+                    <td><input type="text" value="<%=datos.codlinea%>" name="codlinea" id="codlinea" class="codlinea"></td>
+                    <td><input type="text" value="<%=datos.nomlinea%>" name="nomlinea" id="nomlinea" class="nomlinea"></td>
+                    <td><input type="text" value="<%=datos.montomaxicredito%>" name="montomaxicredito" id="montomaxicredito" class="montomaxicredito"></td>
+                    <td><input type="text" value="<%=datos.plazomaxcred%>" name="plazomaxcred" id="plazomaxcred" class="plazomaxcred"></td>
+                    <td><input type="submit" value="actualizar" name="btnact" id="btnact" class="btnact"></td>
+                    <td><input type="submit" value="eliminar" name="btneli" id="btneli" class="btneli"></td>
+                </tr>
+                <%})%>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>

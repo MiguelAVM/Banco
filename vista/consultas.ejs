@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/actualizar.js"></script>
+    <script src="/js/eliminar.js"></script>
+    <link rel="stylesheet" href="./usuarios.css">
+    <title>consulta usuarios</title>
+</head>
+<body>
+    <a href="/cliente">Clientes</a>
+    <a href="/creditos">Creditos</a>
+    <a href="/lineas">Lineas</a>
+    <header><h1>Usuarios</h1></header>
+    <form action="/frminsertar" method="POST" class="insertar">
+    <aside>Documento</aside><input type="text" name="doccli" value="">
+    <aside>Usuario</aside><input type="text" name="nomusu" value="">
+    <aside>Clave</aside><input type="text" name="clave" value="">
+    <aside>Rol</aside><input type="text" name="rol" value="">
+    <aside>Estado</aside><input type="text" name="estado" value="">
+    <aside>Imagen</aside><input type="text"name="imagen" value="">
+    <br>
+    <input type="submit" value="insertar" >
+    </form>
+    <form class="resultado">
+        <table>
+            <thead>
+                <tr>
+                    <th>Documento</th>
+                    <th>Usuario</th>
+                    <th>Clave</th>
+                    <th>Rol</th>
+                    <th>Estado</th>
+                    <th>Imagen</th>
+                    <th>Actualizar</th>
+                    <th>Eliminar</th>    
+                </tr>
+            </thead>
+            <tbody >
+                <% datos.forEach(function (datos){ %>
+                <tr class="resu">
+                    <td><input type="text" value="<%=datos.doccli%>" name="doccli" id="doc" class="doc"></td>
+                    <td><input type="text" value="<%=datos.nomusu%>" name="nomusu" id="usu" class="usu"></td>
+                    <td><input type="text" value="<%=datos.clave%>" name="clave" id="cla" class="cla"></td>
+                    <td><input type="text" value="<%=datos.rol%>" name="rol" id="rol" class="rol"></td>
+                    <td><input type="text" value="<%=datos.estado%>" name="estado" id="est" class="est"></td>
+                    <td><input type="text" value="<%=datos.imagen%>" name="imagen" id="img" class="img"></td>
+                    <td><input type="submit" value="actualizar" name="btnact" id="btnact" class="btnact"></td>
+                    <td><input type="submit" value="eliminar" name="btneli" id="btneli" class="btneli"></td>
+                </tr>
+                <%})%>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>
